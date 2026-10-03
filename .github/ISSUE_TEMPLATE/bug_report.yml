@@ -1,0 +1,83 @@
+name: Bug report / Ошибка
+description: Something does not work as expected. / Что-то работает не так.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Please fill in the fields below — in English or Russian.
+        Спасибо за сообщение! Заполните поля ниже — можно на русском.
+  - type: input
+    id: version
+    attributes:
+      label: Modvault version / Версия
+      description: Bottom right corner of the window, e.g. “modvault 0.1.0”. / Правый нижний угол окна.
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: windows
+    attributes:
+      label: Windows
+      options:
+        - Windows 11
+        - Windows 10
+        - Other / Другая
+    validations:
+      required: true
+  - type: dropdown
+    id: loader
+    attributes:
+      label: Mod loader / Загрузчик модов
+      options:
+        - Darktide Mod Loader + Auto Mod Loading and Ordering (AML)
+        - Darktide Mod Loader only / Только DML
+        - Don't know / Не знаю
+  - type: dropdown
+    id: vortex
+    attributes:
+      label: Came from Vortex? / Перешли с Vortex?
+      options:
+        - Yes, took over from Vortex / Да, перенял у Vortex
+        - No, started with Modvault / Нет, сразу Modvault
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area / Область
+      options:
+        - Deploy, files in the game / Развёртывание, файлы в игре
+        - Load order, sorting, checks / Порядок загрузки, сортировка, проверки
+        - File conflicts / Конфликты файлов
+        - Diagnosis, faulty mod search / Диагностика, поиск сбойного мода
+        - Nexus, downloads, updates / Nexus, загрузки, обновления
+        - Mod sets, collections / Наборы, коллекции
+        - Vortex takeover or return / Перенять или вернуть Vortex
+        - Window, settings, translation / Окно, настройки, перевод
+        - Other / Другое
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened? / Что случилось?
+      description: What did you expect and what happened instead? Copy the error text if there was one. / Что ожидали и что произошло на самом деле? Скопируйте текст ошибки, если она была.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce / Как повторить
+      placeholder: |
+        1. ...
+        2. ...
+  - type: textarea
+    id: journal
+    attributes:
+      label: Journal / Журнал
+      description: |
+        The “Journal” tab lists what the program did — copy the lines around the problem. The full journal is `journal.jsonl` in the store folder (`Modvault` on the game drive).
+        Раздел «Журнал» показывает, что делала программа, — скопируйте строки рядом с проблемой. Полный журнал — `journal.jsonl` в папке хранилища (`Modvault` на диске с игрой).
+      render: text
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / Скриншоты
+      description: Drag images here. / Перетащите картинки сюда.
