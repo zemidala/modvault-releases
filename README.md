@@ -103,6 +103,7 @@ English and Russian interface · Русский интерфейс — [see belo
 
 - 🐞 Found a bug or want a feature? [Open an issue](https://github.com/zemidala/modvault-releases/issues/new/choose).
 - 💬 Questions, ideas, your setups — [Discussions](https://github.com/zemidala/modvault-releases/discussions).
+- 🧩 Source code (MIT License) and build steps — [zemidala/modvault](https://github.com/zemidala/modvault).
 
 English or Russian — both are fine.
 
@@ -191,3 +192,5 @@ English or Russian — both are fine.
 **Удаление**: в Modvault выключите «Открывать ссылки с сайта Nexus в Modvault» (или нажмите «Вернуть Vortex»), затем удалите exe, папку хранилища (`Modvault` на диске с игрой) и `%LOCALAPPDATA%\Modvault`.
 
 Нашли ошибку — [создайте issue](https://github.com/zemidala/modvault-releases/issues/new/choose); вопросы и идеи — в [Discussions](https://github.com/zemidala/modvault-releases/discussions). Писать можно по-русски.
+
+Исходный код (лицензия MIT) и шаги сборки — [zemidala/modvault](https://github.com/zemidala/modvault).
