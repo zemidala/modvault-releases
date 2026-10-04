@@ -43,9 +43,17 @@ English and Russian interface · Русский интерфейс — [see belo
 
 ![Find faulty mod](screenshots/faulty-mod-search.png)
 
+### Mods outside Modvault and mods in development
+- Mod folders you put into the game yourself are **shown in the list** with an “out” mark: the loader loads them, so Modvault does not hide them.
+- **Take into Modvault**: the mod's files are copied into the store and its files in the game become the mod's files. Nothing else happens — the mod appears disabled, the game is unchanged until you enable it or press **Deploy**.
+- **Mods in development**: a folder link (junction) to your project becomes a mod whose files are not copied. The game keeps a link to the project folder, so your edits are in the game at once — and the mod can still be disabled or added to sets. The project folder is never touched.
+- Empty folders left by Vortex get a notice with a **Move to Recycle Bin** button.
+
+![Mods outside Modvault](screenshots/outside-mods.png)
+
 ### Nexus Mods
 - **Mod Manager Download** buttons on the Nexus site install mods into Modvault (`nxm://` links, switchable in Settings; the previous handler is remembered and restored).
-- **Update check** at start or by button, with progress in the list. Premium accounts download updates directly; without Premium Modvault opens the right file page. An updated, enabled mod goes into the game at once.
+- **Update check** at start or by button, with progress in the list. Premium accounts download updates directly; without Premium Modvault opens the right file page. **Update** puts the new version straight into the game, and the mod keeps its state: a deployed mod stays deployed, a disabled one stays disabled, other pending changes keep waiting.
 - Downloads **resume** after a network failure and are verified by size and MD5 before they reach the store. The **Downloads** tab shows progress, speed and time left.
 - **Columns from Nexus**: author (link to the profile), category, endorsements, downloads, update status.
 - **Endorse** a mod with the heart in the list, or abstain.
@@ -62,6 +70,8 @@ English and Russian interface · Русский интерфейс — [see belo
 - **Set as a file** (`*.modvault-set.json`): share it, and on another PC Modvault creates the set and lists the missing mods with links.
 
 ### The window
+- **Icons tell what is going on with each mod**: where it comes from (Nexus, disk, project link, outside Modvault), how many mods it requires and how many need it, unresolved file conflicts (click to resolve). Select a mod and the mods it needs and the mods that need it are highlighted. A legend sits above the list.
+- **Ctrl + A** selects all shown mods for a new set, adding to a set, enabling or disabling; **Esc** clears the selection.
 - Sortable list with a column chooser, quick filters (enabled, disabled, with update, with errors, favourites, category) and search by name or author.
 - **Favourites** are shown first. **Version rollback**: one previous version stays in the store after an update; older ones go to the Recycle Bin.
 - Add mods by **dragging archives** (zip, 7z, rar) into the window.
@@ -134,9 +144,15 @@ English or Russian — both are fine.
 - **Диагностика после каждого запуска.** Modvault читает журнал самой игры и показывает, какие моды выдали ошибки (сколько и текст первой) и почему игра упала. У мода появляется значок ⚠ и кнопка **«Выключить»**.
 - **«Найти сбойный мод».** Если журнал виновника не называет, Modvault делением пополам находит наименьший набор модов, с которым проблема повторяется, — один мод или сочетание. Вы запускаете игру и отвечаете «проблема осталась» или «проблемы нет»; для 140 модов это около 10 запусков вместо 140. После каждого запуска программа читает журнал и подсказывает ответ. Поиск идёт во временном наборе: ваш набор не меняется, в конце игра возвращается к нему. Поиск переживает перезапуск и прерывается в любой момент.
 
+### Моды вне Modvault и моды в разработке
+- Папки модов, которые вы положили в игру сами, **видны в списке** с пометкой «вне»: загрузчик их грузит, и Modvault их не прячет.
+- **«Взять в Modvault»**: файлы мода копируются в хранилище, а файлы в игре становятся файлами этого мода. Больше ничего не происходит — мод появляется выключенным, игра не меняется, пока вы его не включите или не нажмёте **«Развернуть»**.
+- **Моды в разработке**: ссылка на папку проекта (junction) становится модом, файлы которого не копируются. В игре остаётся ссылка на проект — правки сразу в игре, а мод при этом можно выключать и включать в наборы. Папка проекта не трогается.
+- Пустые папки, оставшиеся от Vortex, — замечание с кнопкой **«Убрать в Корзину»**.
+
 ### Nexus Mods
 - Кнопки **«Mod Manager Download»** на сайте Nexus ставят моды в Modvault (ссылки `nxm://`, включаются в настройках; прежняя программа запоминается и возвращается).
-- **Проверка обновлений** при запуске или по кнопке, с ходом прямо в списке. С Premium обновление качается сразу, без него открывается страница нужного файла. Обновлённый включённый мод сразу попадает в игру.
+- **Проверка обновлений** при запуске или по кнопке, с ходом прямо в списке. С Premium обновление качается сразу, без него открывается страница нужного файла. **«Обновить»** сразу кладёт новую версию в игру, а мод остаётся в прежнем состоянии: развёрнутый — развёрнутым, выключенный — выключенным; другие ждущие изменения продолжают ждать.
 - Загрузка **докачивается** после обрыва сети и сверяется по размеру и MD5, прежде чем попасть в хранилище. Раздел **«Загрузки»** показывает ход, скорость и оставшееся время.
 - **Столбцы с Nexus**: автор (ссылка на профиль), категория, одобрения, скачивания, состояние обновления.
 - **Одобрить мод** сердечком в списке или воздержаться.
@@ -151,6 +167,8 @@ English or Russian — both are fine.
 - **Набор как файл** (`*.modvault-set.json`): поделитесь им — на другом компьютере Modvault создаст набор и перечислит недостающие моды со ссылками.
 
 ### Окно
+- **Значки показывают, что с модом**: откуда он (Nexus, диск, ссылка на проект, вне Modvault), сколько модов ему нужно и скольким нужен он, нерешённые конфликты файлов (щелчок — разбор). Выберите мод — подсветятся моды, которые ему нужны, и моды, которым нужен он. Над списком — легенда.
+- **Ctrl + A** выделяет все видные моды — для нового набора, добавления в набор, включения или выключения; **Esc** снимает выделение.
 - Список с сортировкой по столбцам, выбором столбцов, быстрыми фильтрами (включённые, выключенные, с обновлением, с ошибками, избранные, категория) и поиском по названию или автору.
 - **Избранное** стоит первым. **Откат версии**: после обновления в хранилище остаётся одна прежняя версия, более старые уходят в Корзину.
 - Моды добавляются **перетаскиванием архивов** (zip, 7z, rar) в окно.
